@@ -104,6 +104,7 @@ GEM
       activesupport (>= 5.0.0)
     jsbundling-rails (1.0.3)
       railties (>= 6.0.0)
+    kind (5.10.0)
     loofah (2.18.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -195,6 +196,11 @@ GEM
       railties (>= 6.0.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
+    u-attributes (2.8.0)
+      kind (>= 4.0, < 6.0)
+    u-case (4.5.1)
+      kind (>= 5.6, < 6.0)
+      u-attributes (>= 2.7, < 3.0)
     web-console (4.2.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -208,6 +214,7 @@ GEM
     websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
+    wisper_next (0.1.0)
     xpath (3.2.0)
       nokogiri (~> 1.8)
     zeitwerk (2.6.0)
@@ -231,8 +238,10 @@ DEPENDENCIES
   stimulus-rails
   turbo-rails
   tzinfo-data
+  u-case (~> 4.5.1)
   web-console
   webdrivers
+  wisper_next
 
 RUBY VERSION
    ruby 3.1.2p20
