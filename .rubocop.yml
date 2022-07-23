@@ -37,6 +37,9 @@ Layout/HashAlignment:
 Layout/EndAlignment:
   EnforcedStyleAlignWith: variable
 
+Layout/SpaceInsideBlockBraces:
+  Enabled: true
+
 Naming/RescuedExceptionsVariableName:
   Enabled: true
   PreferredName: exception
@@ -79,6 +82,10 @@ Metrics/ClassLength:
 
 Metrics/ModuleLength:
   Max: 100
+
+Metrics/BlockLength:
+  Exclude:
+    - spec/**/*_spec.rb
 
 Layout/LineLength:
   Enabled: false
