@@ -5,10 +5,13 @@ FactoryBot.define do
     trait :single do
       format { 'single' }
       content { Faker::Lorem.sentence }
+      setup { nil }
+      punchline { nil }
     end
 
-    trait :two_line do
-      type { 'two_line' }
+    trait :two_lines do
+      format { 'two_lines' }
+      content { nil }
       setup { Faker::Lorem.sentence }
       punchline { Faker::Lorem.sentence }
     end
