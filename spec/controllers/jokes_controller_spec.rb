@@ -15,7 +15,7 @@ RSpec.describe JokesController, type: :controller do
 
           expect(response).to render_template('jokes/show')
           expect(controller).to have_received(:render) do |_, args|
-            result = args.dig(:locals, :joke)
+            args => { locals: { joke: result } }
             expect(result.id).to eq(single_joke.id)
             expect(result.content).to eq(single_joke.content)
           end
@@ -30,7 +30,7 @@ RSpec.describe JokesController, type: :controller do
 
           expect(response).to render_template('jokes/show')
           expect(controller).to have_received(:render) do |_, args|
-            result = args.dig(:locals, :joke)
+            args => { locals: { joke: result } }
             expect(result.id).to eq(two_lines_joke.id)
             expect(result.setup).to eq(two_lines_joke.setup)
             expect(result.punchline).to eq(two_lines_joke.punchline)
