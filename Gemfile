@@ -59,6 +59,7 @@ group :development, :test do
   gem 'factory_bot_rails', '~> 6.2'
   gem 'faker', '~> 2.21'
   gem 'foreman', '~> 0.87.2'
+  gem 'rails-controller-testing'
   gem 'rspec-rails', '~> 5.1', '>= 5.1.2'
   gem 'shoulda-matchers', '~> 5.1'
 end
