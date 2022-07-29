@@ -1,24 +1,31 @@
-# README
+# LazyJoker
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This application aims to display jokes fetched from the [jokeAPI](https://sv443.net/jokeapi/v2/), store them in the database and display them to the user in random order and without repetition.
+The idea is to use a "lazy" approach and just retrieve and persist jokes from the API if all the stored jokes have already been displayed in a given session.
 
-Things you may want to cover:
+### Getting started
 
-* Ruby version
+Follow the steps below to get a development environment running
 
-* System dependencies
+Clone the project
+```
+git clone git@github.com:betogrun/lazy-joker.git && cd indexer
+```
 
-* Configuration
+Create the database and run the migrations
 
-* Database creation
+```
+docker-compose run --rm web bundle exec rails db:create
+```
 
-* Database initialization
+### Running
+```
+docker-compose up
+```
 
-* How to run the test suite
+## Running the tests
+```
+docker-compose run --rm web bundle exec rspec
+```
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
-
-* ...
