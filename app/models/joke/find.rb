@@ -2,14 +2,16 @@
 
 class Joke
   class Find < Micro::Case
-    attributes :repository, :seed, :position
+    attribute :position, default: ->(value) { value.to_i }
+    attribute :seed, default: ->(value) { value.to_f }
+    attribute :repository
 
     def call!
       joke = repository.find_random_joke(seed, position)
 
       return Success(result: {joke: joke}) if joke
 
-      Failure(:not_available)
+      Failure(:no_joke)
     end
   end
 end
