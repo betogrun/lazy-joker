@@ -9,7 +9,7 @@ Follow the steps below to get a development environment running
 
 Clone the project
 ```
-git clone git@github.com:betogrun/lazy-joker.git && cd indexer
+git clone git@github.com:betogrun/lazy-joker.git && cd lazy-joker
 ```
 
 Create the database and run the migrations
