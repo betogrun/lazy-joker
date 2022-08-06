@@ -1,0 +1,13 @@
+<div class='container flex justify-between items-center bg-purple-400 px-2 py-20'>
+  <div>
+    <%= button_to('<', joke_path(1), method: :get, form_class: 'contents', class: 'btn-primary') %>
+  </div>
+  <div>
+    <p class='text-white px-5 font-semibold text-center sm:text-2xl md:text-4xl lg:text-7xl'>
+      To whoever stole my copy of Microsoft Office, I will find you. You have my Word!
+    </p>
+  </div>
+  <div>
+    <%= button_to('>', joke_path(2), method: :get, form_class: 'contents', class: 'btn-primary') %>
+  </div>
+</div>

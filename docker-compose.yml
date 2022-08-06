@@ -17,16 +17,16 @@ services:
   js:
     build:
       context: "."
-    tty: true
     command: "yarn build --watch"
+    tty: true
     volumes:
       - .:/usr/src/lazy-joker
 
   css:
     build:
       context: "."
+    command: "bundle exec rails tailwindcss:watch"
     tty: true
-    command: "yarn build:css --watch"
     volumes:
       - .:/usr/src/lazy-joker
 
