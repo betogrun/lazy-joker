@@ -1,9 +1,9 @@
-<div class="flex justify-center items-center my-10 mx-5">
-  <div class="flex flex-col p-6 rounded-lg shadow-lg bg-purple-400">
-    <%= render(partial: "jokes/#{joke.format}_joke", locals: { joke: joke }) %>
-    <div class='flex gap-8 justify-center items-center'>
-      <%= button_to('< Prev', joke_path(position.previous_value), method: :get, form_class: 'contents', class: 'btn-primary') %>
-      <%= button_to('Next >', joke_path(position.next_value), method: :get, form_class: 'contents', class: 'btn-primary') %>
-    </div>
+<div class='container flex justify-between items-center bg-purple-400 px-2 py-20 h-60'>
+  <div>
+    <%= button_to('<', joke_path(position.previous_value), method: :get, form_class: 'contents', class: 'btn-primary') %>
+  </div>
+  <%= render(partial: "jokes/#{joke.format}_joke", locals: { joke: joke }) %>
+  <div>
+    <%= button_to('>', joke_path(position.next_value), method: :get, form_class: 'contents', class: 'btn-primary') %>
   </div>
 </div>

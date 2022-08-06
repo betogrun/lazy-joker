@@ -3,7 +3,7 @@
 class JokesController < ApplicationController
   def show
     Joke::Find.call(seed: seed, position: position)
-      .on_success { |result| render('jokes/test2', locals: { joke: result[:joke], position: result[:position] }) }
+      .on_success { |result| render('jokes/show', locals: { joke: result[:joke], position: result[:position] }) }
       .on_failure(:no_joke) { render('jokes/standby') }
   end
 
