@@ -26,7 +26,7 @@ services:
     build:
       context: "."
     tty: true
-    command: "yarn build:css --watch"
+    command: "bundle exec rails tailwindcss:watch"
     volumes:
       - .:/usr/src/lazy-joker
 
