@@ -28,4 +28,16 @@ docker-compose up
 docker-compose run --rm web bundle exec rspec
 ```
 
+## Debugging
 
+Get the web container id
+
+```
+docker ps
+```
+
+Attach your terminal to the container
+
+```
+docker attach container_id
+```
