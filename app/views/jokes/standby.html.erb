@@ -1,5 +1,11 @@
-<div class="flex justify-center items-center my-10 mx-5">
-  <div class="flex flex-col p-6 rounded-lg shadow-lg bg-purple-400">
-    <p class="text-white text-2xl mt-5 mb-5">Please stand by!</p>
+<div class='container flex items-center justify-between bg-purple-400 px-2 py-20 h-60'>
+  <div>
+    <%= button_to('<', '#', form_class: 'contents', class: 'btn-primary', onclick: 'javascript:window.history.back(); return false;') %>
   </div>
+  <div>
+    <p class='text-white px-5 font-light italic text-center sm:text-xl md:text-2xl lg:text-5xl'>
+      Loading more jokes... please stand by!
+    </p>
+  </div>
+  <div class="w-8 h-8 border-b-4 border-purple-600 rounded-full animate-spin"></div>
 </div>
