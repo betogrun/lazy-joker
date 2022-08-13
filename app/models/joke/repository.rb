@@ -15,7 +15,7 @@ class Joke
       Record
         .order('random()')
         .limit(1)
-        .offset(position - 1)
+        .offset(position.value - 1)
         .select(:id, :format, :content, :setup, :punchline)
         .take
         &.then(&BuildJoke)
