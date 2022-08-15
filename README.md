@@ -25,7 +25,7 @@ docker-compose up
 
 ## Running the tests
 ```
-docker-compose run --rm web bundle exec rspec
+docker-compose run --rm -e RAILS_ENV=test web bundle exec rspec
 ```
 
 ## Debugging
