@@ -12,6 +12,10 @@ module JokeAPI
       ::JokeAPI::Resources::Joke.new(self).retrieve(from: from, to: to)
     end
 
+    def ping
+      ::JokeAPI::Resources::Ping.new(self).ping
+    end
+
     def connection
       @connection ||= Faraday.new(BASE_URL) do |conn|
         conn.request :json
