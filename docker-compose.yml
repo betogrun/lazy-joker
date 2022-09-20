@@ -13,6 +13,8 @@ services:
     image: redis
     volumes:
       - redis_data:/data
+    ports:
+      - 6379:6379
 
   js:
     build:
@@ -45,6 +47,7 @@ services:
       - RAILS_MAX_THREADS=5
       - RAILS_ENV=development
       - RACK_ENV=development
+      - REDIS_PERSISTENCE_URL=redis://redis:6379
       - DATABASE_HOST=db
       - DATABASE_USER=postgres
       - DATABASE_PASSWORD=password
@@ -53,6 +56,26 @@ services:
       - redis
       - js
       - css
+      - worker
+
+  worker:
+    build: .
+    entrypoint: ./entrypoint-dev.sh
+    command: "bundle exec sidekiq"
+    stdin_open: true
+    tty: true
+    volumes:
+      - .:/usr/src/lazy-joker
+      - bundle:/usr/local/bundle
+    environment:
+      - RAILS_ENV=development
+      - REDIS_PERSISTENCE_URL=redis://redis:6379
+      - DATABASE_HOST=db
+      - DATABASE_USER=postgres
+      - DATABASE_PASSWORD=password
+    depends_on:
+      - db
+      - redis
 
 volumes:
   postgres_data:
